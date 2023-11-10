@@ -1,10 +1,15 @@
 # DichopticAugmentedReality
 Data and code associated with manuscript "The effect of interocular contrast differences on the appearance of augmented reality imagery"
+M. Wang, J. Ding, D.M. Levi and E.A. Cooper
 ACM Transactions on Applied Perception, in press
 
-Folder: data --> for both experiments are in the data folder (Expt 1 and Expt2_AR subfolders)
-- data structure fields
-	- reference = whether the reference stim was the top one or the bottom one
+The content is organized into 3 folders:
+
+## data
+data for both experiments are here (Expt 1 and Expt2_AR subfolders)
+
+- data structure fields:
+	- reference = whether the reference stimulus was the top one or the bottom one
 	- adjust = the adjustable one was top or bottom
 	- stim = columns of stimulus info 
 	      --col1 is stimulus type (also listed in the .pattern field)
@@ -14,13 +19,16 @@ Folder: data --> for both experiments are in the data folder (Expt 1 and Expt2_A
 	- pattern = what stimulus pattern was coded by stim field col1
 	      -- example: for Expt 1, stim col1=1 means grating, col1=5 was bandpassed noise
 	- resp = responses
-	      --col1 is matching result
+	      --col1 is matching response
 	      --col2 is exact match response (1 = yes, 2 = no)
 	      --col3 to col7 are perceptual effect responses: brightness, contrast, luster, rivalry, depth
 		  ---1 = top selected, 2 = bottom selected, 4 = same/neither, 5 = unsure
-*********************************************************************************************
-Folder: Expt2 matching analysis --> matching task analysis code for Expt2 only, see other repo for Expt1
-- code files for making Figure 8: 
+
+
+## Expt2 matching analysis 
+matching task analysis code for Expt2 only (see [other repo for Expt1](https://github.com/eacooper/DichopticSpatialStructure))
+
+- code for making Figure 8: 
 	- plot_ARmatch_byICR.m --> determine high contrast stim weight for each interocular contrast ratio condition 
 	- plot_ARmatch_byPattern.m --> determine high contrast stim weight for each stimulus pattern condition
 	- genBino.m --> helper function for the simple weighted combination model
@@ -29,8 +37,10 @@ Folder: Expt2 matching analysis --> matching task analysis code for Expt2 only, 
 	- ARmatch_weight.m --> determine the weight for dominant eye high contrast trials vs. nondominant eye, and make plots
 - subfolder: R stats --> processed data files and R code to run ANOVA/t-test for the matching task, Table 4
 
-*********************************************************************************************
-Folder: Perceptual question analysis --> scripts for analyzing perceptual question responses for both Expt 1 and 2
+
+## Perceptual question analysis 
+scripts for analyzing perceptual question responses for both Expt 1 and 2
+
 - main plot and analysis code
 	- plot_exactMatch_Expt*.m --> plot Figure 6 and Figure 8 (proportion of exact match)
 	- doGLME_Match_Expt*.m --> run mixed effect logistic regression model, Table 1, 2, 5, 6 
